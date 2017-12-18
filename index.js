@@ -1,8 +1,7 @@
-var miNumero = 3;
+var numero1 = prompt('Dame un número');
+var numero2 = prompt('Dame otro número');
+var resultado;
 
+resultado = numero1 + numero2;
 
-if (miNumero % 2 === 0) {
-  console.log('Es par');
-}else {
-  console.log('Es impar');
-}
+alert('el resultado es ' + resultado);

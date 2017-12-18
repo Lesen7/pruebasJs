@@ -1,7 +1,11 @@
-var añoNacimiento = 1995;
-var añoActual = 2017;
+var añoUsuario = 1980;
+
+function comprobarEdad(valor) {
+  var resultado = 2017 - valor;
+  return resultado;
+}
+
 var edad;
 
-edad = añoActual - añoNacimiento;
-
+edad = comprobarEdad(añoUsuario);
 console.log(edad);
