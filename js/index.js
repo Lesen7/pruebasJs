@@ -5,10 +5,6 @@ var tipoDivision;
 var resultado;
 var cocienteDivision;
 
-function decimalAEntero (valor) {
-    return valor | 0;
-}
-
 function determinarOperador () {
   switch (operador) {
     case "+":
@@ -37,12 +33,10 @@ function determinarOperador () {
 function mostrarResultado (validez) {
   if (validez === "inválido") {
     alert('Has introducido datos inválidos');
-  } else if (operador != "/") {
+  } else if (operador != "/" || tipoDivision === "decimal") {
       alert('El resultado es ' + resultado);
-  }  else if (tipoDivision === "entera"){
+  }  else {
       alert('El resultado es ' + Math.round(resultado) + ' y el resto de la división es ' + cocienteDivision);
-  } else {
-      alert('El resultado es ' + resultado);
   }
 }
 
