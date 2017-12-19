@@ -8,7 +8,7 @@ var cocienteDivision;
 function determinarOperador () {
   switch (operador) {
     case "+":
-      resultado = numero1 + numero2;
+      resultado = Number(numero1) + Number(numero2);
       break;
 
       case "-":
@@ -30,13 +30,21 @@ function determinarOperador () {
   }
 }
 
-function mostrarResultado (validez) {
-  if (validez === "inválido") {
-    alert('Has introducido datos inválidos');
-  } else if (operador != "/" || tipoDivision === "decimal") {
-      alert('El resultado es ' + resultado);
-  }  else {
-      alert('El resultado es ' + Math.round(resultado) + ' y el resto de la división es ' + cocienteDivision);
+function mostrarResultado (validezSigno) {
+
+  switch (validezSigno) {
+    case "inválido":
+      alert('Has introducido un signo inválido');
+      break;
+
+    default:
+    if (isNaN(numero1) || isNaN(numero2)) {
+        alert('Has introducido caracteres no numéricos');
+    } else if (operador != "/" || tipoDivision === "decimal"){
+        alert('El resultado es ' + resultado);
+    } else  {
+        alert('El resultado es ' + Math.round(resultado) + ' y el resto de la división es ' + cocienteDivision);
+    }
   }
 }
 
