@@ -1,6 +1,22 @@
-var expresión = prompt('Introduce una expresión (escripe exit para salir)')
+var expresion;
 var resultado;
+var continuar = true;
 
-resultado = eval(expresión);
+function pedirExpresion () {
+  expresion = prompt('Introduce una expresión (escribe exit para salir)');
+  if (expresion === 'exit' || expresion === 'Exit') {
+    continuar = false;
+  } else {
+    continuar = true;
+  }
+}
 
-alert('El resultado es: ' + resultado);
+function evaluarYMostrarResultado () {
+    resultado = eval(expresion);
+    alert('El resultado es: ' + resultado);
+}
+
+while(continuar) {
+pedirExpresion();
+evaluarYMostrarResultado();
+}
